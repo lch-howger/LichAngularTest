@@ -7,18 +7,25 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
+
   constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  public peopleInfo: any = {
-    name: "",
-
-  }
+  public content: string = ""
+  public arr: string[] = ["aaa", "bbb"]
 
   submit() {
-    alert(this.peopleInfo.name)
+    let number = this.arr.indexOf(this.content);
+    if (number == -1) {
+      this.arr.push(this.content);
+      this.content = ""
+    }
+  }
+
+  delete(key: number) {
+    this.arr.splice(key, 1)
   }
 }
