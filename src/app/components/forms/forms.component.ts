@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class FormsComponent implements OnInit {
 
 
-  constructor() {
+  constructor(public storage:StorageService) {
   }
 
   ngOnInit(): void {
