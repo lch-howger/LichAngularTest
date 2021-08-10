@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Student} from "../heroes/student";
 
 @Component({
   selector: 'app-top-bar',
@@ -26,8 +27,20 @@ export class TopBarComponent implements OnInit {
 
   @Output()
   public addCountEmitter: EventEmitter<any> = new EventEmitter();
+  public stuEmitter: EventEmitter<Student> = new EventEmitter();
 
   addCount() {
     this.addCountEmitter.emit({count: this.count + 1})
+  }
+
+  stuName: string = '';
+  stuAge: number = 0;
+
+  addStudent() {
+    let stu: Student = {
+      name: this.stuName,
+      age: this.stuAge
+    }
+    this.stuEmitter.emit(stu)
   }
 }
