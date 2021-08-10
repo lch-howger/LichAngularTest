@@ -10,6 +10,8 @@ import {StorageService} from "./services/storage.service";
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ContentDashboardComponent } from './content-dashboard/content-dashboard.component';
+import { ContentHeroesListComponent } from './content-heroes-list/content-heroes-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     FormsComponent,
     HeroesComponent,
     HeroDetailComponent,
-    TopBarComponent
+    TopBarComponent,
+    ContentDashboardComponent,
+    ContentHeroesListComponent
   ],
   imports: [
     BrowserModule,
