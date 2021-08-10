@@ -12,6 +12,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ContentDashboardComponent } from './content-dashboard/content-dashboard.component';
 import { ContentHeroesListComponent } from './content-heroes-list/content-heroes-list.component';
+import { ContentHeroDetailComponent } from './content-hero-detail/content-hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContentHeroesListComponent } from './content-heroes-list/content-heroes
     HeroDetailComponent,
     TopBarComponent,
     ContentDashboardComponent,
-    ContentHeroesListComponent
+    ContentHeroesListComponent,
+    ContentHeroDetailComponent
   ],
   imports: [
     BrowserModule,

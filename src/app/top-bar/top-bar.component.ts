@@ -9,7 +9,7 @@ import {Student} from "../heroes/student";
 export class TopBarComponent implements OnInit {
 
   title: string = "Tour of Heroes"
-  tabArr: string[] = ["Dashboard", "Heroes"]
+  tabArr: string[] = ["Dashboard", "Heroes","Hero-Detail"]
   page: string = ""
 
   selectTab(i: number) {
