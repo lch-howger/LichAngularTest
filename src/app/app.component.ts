@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.stuList=this.storageService.getStudent()
+    this.stuList = this.storageService.getStudent()
   }
 
   title = 'LichAngularTest';
@@ -30,4 +30,15 @@ export class AppComponent {
     this.stuList.push($event)
     this.storageService.setStudent(this.stuList)
   }
+
+  nowIndex: number = 0
+  nowPage: string = "";
+
+  changePage($event: any) {
+    let index = $event.index;
+    let nowPage = $event.nowPage;
+    this.nowIndex = index
+    this.nowPage = nowPage
+  }
+
 }

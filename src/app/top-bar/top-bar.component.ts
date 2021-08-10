@@ -9,13 +9,8 @@ import {Student} from "../heroes/student";
 export class TopBarComponent implements OnInit {
 
   title: string = "Tour of Heroes"
-  tabArr: string[] = ["Dashboard", "Heroes","Hero-Detail"]
-  page: string = ""
-
-  selectTab(i: number) {
-    let tab = this.tabArr[i]
-    this.page = tab
-  }
+  tabArr: string[] = ["Dashboard", "Heroes", "Hero-Detail"]
+  nowPage: string = ""
 
   constructor() {
   }
@@ -29,6 +24,8 @@ export class TopBarComponent implements OnInit {
   public addCountEmitter: EventEmitter<any> = new EventEmitter();
   @Output()
   public stuEmitter: EventEmitter<Student> = new EventEmitter();
+  @Output()
+  public topBarEmitter: EventEmitter<any> = new EventEmitter();
 
   addCount() {
     this.addCountEmitter.emit({count: this.count + 1})
@@ -44,4 +41,13 @@ export class TopBarComponent implements OnInit {
     }
     this.stuEmitter.emit(stu)
   }
+
+  selectTab(i: number) {
+    this.nowPage = this.tabArr[i]
+    this.topBarEmitter.emit({
+      index: i,
+      nowPage: this.nowPage
+    })
+  }
+
 }

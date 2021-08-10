@@ -1,3 +1,7 @@
-<app-top-bar [count]="count" (addCountEmitter)="changeCount($event)" (stuEmitter)="addStudent($event)"></app-top-bar>
-<app-content-dashboard [count]="count"></app-content-dashboard>
-<app-content-heroes-list [stuList]="stuList"></app-content-heroes-list>
+<app-top-bar [count]="count" (addCountEmitter)="changeCount($event)" (stuEmitter)="addStudent($event)"
+             (topBarEmitter)="changePage($event)"></app-top-bar>
+
+<h2>{{nowPage}}</h2>
+
+<app-content-dashboard [count]="count" *ngIf="nowIndex==0"></app-content-dashboard>
+<app-content-heroes-list [stuList]="stuList" *ngIf="nowIndex==1"></app-content-heroes-list>
