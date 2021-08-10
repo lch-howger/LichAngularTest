@@ -8,13 +8,15 @@ import {FormsComponent} from './components/forms/forms.component';
 
 import {StorageService} from "./services/storage.service";
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
     FormsComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
