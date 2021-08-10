@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {StorageService} from "../../services/storage.service";
 
 @Component({
   selector: 'app-forms',
@@ -7,14 +8,18 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
+  public store: string = ""
 
-  constructor(public storage:StorageService) {
+  constructor(public storage: StorageService) {
+
   }
 
   ngOnInit(): void {
+    this.store = this.storage.get()
   }
 
   public content: string = ""
+
   public arr: string[] = ["aaa", "bbb"]
 
   submit() {
@@ -23,6 +28,8 @@ export class FormsComponent implements OnInit {
       this.arr.push(this.content);
       this.content = ""
     }
+
+    this.storage.set(this.content)
   }
 
   delete(key: number) {
