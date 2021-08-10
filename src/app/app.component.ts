@@ -8,7 +8,9 @@ import {Component, ViewChild} from '@angular/core';
 export class AppComponent {
   title = 'LichAngularTest';
 
+  count: number = 5
 
-
-
+  changeCount($event: any) {
+    this.count = $event.count
+  }
 }

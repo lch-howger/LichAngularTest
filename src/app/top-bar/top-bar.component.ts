@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
@@ -22,7 +22,12 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input() count: number = 0
+
+  @Output()
+  public addCountEmitter: EventEmitter<any> = new EventEmitter();
+
   addCount() {
-    alert("a")
+    this.addCountEmitter.emit({count: this.count + 1})
   }
 }
