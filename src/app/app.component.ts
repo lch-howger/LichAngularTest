@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {Student} from "./heroes/student";
+import {StorageService} from "./services/storage.service";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,16 @@ import {Student} from "./heroes/student";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  stuList: Student[] = []
+
+  constructor(public storageService: StorageService) {
+  }
+
+  ngOnInit() {
+    this.stuList=this.storageService.getStudent()
+  }
+
   title = 'LichAngularTest';
 
   count: number = 5
@@ -15,9 +26,8 @@ export class AppComponent {
     this.count = $event.count
   }
 
-  stuList:Student[]=[]
-
   addStudent($event: Student) {
     this.stuList.push($event)
+    this.storageService.setStudent(this.stuList)
   }
 }
