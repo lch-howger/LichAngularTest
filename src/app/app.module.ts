@@ -9,6 +9,7 @@ import {FormsComponent} from './components/forms/forms.component';
 import {StorageService} from "./services/storage.service";
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     GamesComponent,
     FormsComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
