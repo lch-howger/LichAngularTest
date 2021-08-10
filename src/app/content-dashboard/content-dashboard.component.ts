@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-content-dashboard',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentDashboardComponent implements OnInit {
 
-  constructor() { }
+  @Input() count: number = 0
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  ngOnChanges() {
+
+  }
 }
