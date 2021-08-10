@@ -22,5 +22,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  addCount() {
+    alert("a")
+  }
 }
