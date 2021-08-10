@@ -27,6 +27,7 @@ export class TopBarComponent implements OnInit {
 
   @Output()
   public addCountEmitter: EventEmitter<any> = new EventEmitter();
+  @Output()
   public stuEmitter: EventEmitter<Student> = new EventEmitter();
 
   addCount() {

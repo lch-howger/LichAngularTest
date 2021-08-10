@@ -1,4 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
+import {Student} from "./heroes/student";
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,11 @@ export class AppComponent {
 
   changeCount($event: any) {
     this.count = $event.count
+  }
+
+  stuList:Student[]=[]
+
+  addStudent($event: Student) {
+    this.stuList.push($event)
   }
 }
